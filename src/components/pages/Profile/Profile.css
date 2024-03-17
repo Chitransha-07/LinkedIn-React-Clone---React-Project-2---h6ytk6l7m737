@@ -1,0 +1,109 @@
+.image-and-cover-container {
+  width: 100%;
+}
+.profile-cover {
+  width: 100%;
+  height: 200px;
+}
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-top: -80px;
+  margin-left: 20px;
+}
+.profile-image.dark {
+  border: 3px solid #1b1f23;
+}
+.profile-name {
+  padding: 10px 20px 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.profile-name.dark {
+  color: rgb(255 255 255/0.9);
+}
+.profile-dummy-description {
+  padding: 4px 20px 10px 20px;
+  font-size: 14px;
+}
+.profile-dummy-description.dark {
+  color: rgb(255 255 255/0.9);
+}
+.profile-msg {
+  font-size: 13px;
+  padding: 0 20px;
+}
+.profile-msg.dark {
+  color: rgb(255 255 255/0.9);
+}
+.profile-dummy-button {
+  padding: 24px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  > button {
+    cursor: not-allowed;
+    border-radius: 28px;
+    padding: 4px 12px;
+    font-weight: 500;
+  }
+  > button:first-child {
+    background-color: #186fc6;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border: none;
+    > svg {
+      color: #fff;
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+  }
+  > button:nth-child(2) {
+    background-color: #fff;
+    color: #186fc6;
+    border: 1px solid #186fc6;
+  }
+  > button:last-child {
+    background-color: #fff;
+    color: rgb(0 0 0/0.7);
+    border: 1px solid rgb(0 0 0/0.7);
+  }
+}
+.profile-dummy-button.dark {
+  > button:first-child {
+    color: #1b1f23;
+    > svg {
+      color: #1b1f23;
+    }
+  }
+  > button:nth-child(2) {
+    background-color: #1b1f23;
+    color: #186fc6;
+    border: 1px solid #186fc6;
+  }
+  > button:last-child {
+    background-color: #1b1f23;
+    color: rgb(255 255 255/0.7);
+    border: 1px solid rgb(255 255 255/0.7);
+  }
+}
+.profile-dummy-about {
+  padding: 20px;
+  > h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+  }
+  > p {
+    font-size: 14px;
+  }
+  > p:last-child {
+    margin-top: 12px;
+  }
+}
+.profile-dummy-about.dark {
+  color: rgb(255 255 255/0.9);
+}

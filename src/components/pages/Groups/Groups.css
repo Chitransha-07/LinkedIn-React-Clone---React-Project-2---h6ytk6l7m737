@@ -1,0 +1,433 @@
+.groupPage-layout {
+  display: grid;
+  grid-template-areas: "main" "aside";
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: 24px;
+  grid-template-rows: auto;
+  row-gap: 24px;
+}
+.groupPage-layout--main {
+  grid-area: main;
+}
+.groupPage-layout--aside {
+  grid-area: aside;
+}
+.groupPage-common-container {
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0px 0px 0px 1px rgb(140 140 140/0.2);
+}
+.groupPage-common-container.dark {
+  background-color: #1b1f23;
+}
+.create-and-discover-group-container {
+  min-height: calc(100vh - 52px - 49px);
+}
+.create-and-your-groups {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px;
+  align-items: center;
+  border-bottom: 1px solid rgb(0 0 0/0.1);
+  > div {
+    display: flex;
+    gap: 1rem;
+    > p {
+      font-weight: 500;
+      padding: 12px 0;
+      cursor: pointer;
+    }
+    > p.active {
+      border-bottom: 2px solid #067853;
+      color: #067853;
+    }
+  }
+  > button {
+    color: #186fc6;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid #186fc6;
+    border-radius: 24px;
+    padding: 4px 16px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+.create-and-your-groups.dark {
+  border-bottom: 1px solid rgb(255 255 255/0.1);
+  > div {
+    > p {
+      color: rgb(255 255 255/0.9);
+    }
+    > p.active {
+      border-bottom: 2px solid #067853;
+      color: #067853;
+    }
+  }
+}
+.groupPage-my-groups {
+  padding: 1rem;
+  display: flex;
+}
+.groupPage-empty-my-groups {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  align-items: center;
+  > h2 {
+    margin: auto;
+    background-image: url(https://static.licdn.com/aero-v1/sc/h/awfqc67t42p28qr5oetysabdg);
+    background-position: center 16px;
+    padding-top: 160px;
+    background-repeat: no-repeat;
+    margin-bottom: 8px;
+  }
+  > p {
+    text-align: center;
+    color: rgb(0 0 0/0.6);
+  }
+  > button {
+    color: #186fc6;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #186fc6;
+    border-radius: 24px;
+    width: 100px;
+    padding: 4px 16px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+}
+.groupPage-empty-my-groups {
+  > h2 {
+    color: rgb(255 255 255/0.9);
+  }
+  > p {
+    color: rgb(255 255 255/0.6);
+  }
+}
+.myGroups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.myGroups-item {
+  display: flex;
+  cursor: pointer;
+  width: 100%;
+  > img {
+    width: 60px;
+  }
+  > div {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    justify-content: center;
+    > span:first-child {
+      font-weight: 500;
+    }
+    > span:last-child {
+      font-size: 13px;
+      color: rgb(0 0 0/0.6);
+    }
+  }
+}
+.myGroups-item.dark {
+  > div {
+    > span:first-child {
+      color: rgb(255 255 255/0.9);
+    }
+    > span:last-child {
+      color: rgb(255 255 255/0.6);
+    }
+  }
+}
+.group-seggestion-heading {
+  padding: 16px;
+  > span {
+    font-weight: 500;
+  }
+}
+.group-seggestion-heading.dark {
+  > span {
+    color: rgb(255 255 255/0.9);
+  }
+}
+.suggested-groups-container {
+  padding: 16px 0;
+}
+.suggested-group-card {
+  border-bottom: 1px solid rgb(0 0 0/0.1);
+  margin-top: 1rem;
+  > div {
+    display: flex;
+    > img {
+      width: 60px;
+    }
+    > div {
+      margin-left: 16px;
+      display: flex;
+      flex-direction: column;
+      text-transform: capitalize;
+      justify-content: center;
+      > span:first-child {
+        font-weight: 500;
+      }
+      > span:last-child {
+        font-size: 13px;
+        color: rgb(0 0 0/0.6);
+      }
+    }
+  }
+  > button {
+    margin-left: 76px;
+    margin-top: 10px;
+    background-color: transparent;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid rgb(0 0 0/0.6);
+    cursor: pointer;
+    border-radius: 24px;
+    padding: 4px 12px;
+    font-size: 14px;
+    color: rgb(0 0 0/0.6);
+    margin-bottom: 1rem;
+  }
+}
+.suggested-group-card.dark {
+  border-bottom: 1px solid rgb(255 255 255/0.2);
+  > div {
+    > div {
+      > span:first-child {
+        color: rgb(255 255 255/0.9);
+      }
+      > span:last-child {
+        color: rgb(255 255 255/0.6);
+      }
+    }
+  }
+  > button {
+    border: 1px solid rgb(255 255 255/0.6);
+    color: rgb(255 255 255/0.6);
+  }
+}
+.suggested-group-card:last-child {
+  border-bottom: none;
+}
+.create-group-modal {
+  width: 744px;
+  max-width: 100%;
+  max-height: calc(100vh - 16px);
+  background-color: #fff;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  top: 32px;
+  box-shadow: 0px 0px 0px 1px rgb(140 140 140/0.2), 0px 4px 4px rgb(0 0 0/0.3);
+  > button {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    right: 16px;
+    padding: 0;
+    height: 28px;
+    width: 28px;
+    min-width: auto;
+    border-color: hsla(0, 0%, 100%, 0);
+    color: rgb(0 0 0/0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    min-height: 28px;
+    line-height: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    background: none;
+    justify-content: center;
+    &:hover {
+      background-color: rgb(0 0 0 / 0.1);
+    }
+  }
+}
+.create-group-modal.dark {
+  background-color: #1b1f23;
+  > button {
+    color: rgb(255 255 255/0.6);
+    &:hover {
+      background-color: rgb(255 255 255/ 0.1);
+    }
+  }
+}
+.create-group-heading {
+  padding: 16px 20px;
+  font-weight: 500;
+  font-size: larger;
+}
+.create-group-heading.dark {
+  color: rgb(255 255 255/0.9);
+}
+.create-group-details {
+  min-height: 60px;
+  overflow: auto;
+  padding-bottom: 1rem;
+  max-height: 450px;
+}
+.group-cover-image {
+  background-image: url(https://static.licdn.com/aero-v1/sc/h/68ao3xk5x5pa9fwrs0al41kf0);
+  height: calc(774px * 0.25);
+  max-width: 774px;
+  position: relative;
+  > img {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    object-fit: cover;
+    bottom: -20px;
+    left: 20px;
+  }
+  > label {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    color: rgb(0 0 0/0.6);
+    bottom: -30px;
+    left: 85px;
+    border: 1px solid black;
+    border-radius: 50%;
+    z-index: 1;
+    padding: 5px;
+    cursor: pointer;
+  }
+  > input {
+    display: none;
+  }
+}
+.group-cover-image.dark {
+  > label {
+    background-color: #1b1f23;
+    color: rgb(255 255 255/0.6);
+    border: 1px solid rgb(255 255 255/0.6);
+  }
+}
+.group-name-input-container {
+  padding-inline: 20px;
+  margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+  > input {
+    margin-top: 2px;
+    padding-block: 6px;
+  }
+}
+.group-name-input-container.dark {
+  color: rgb(255 255 255/0.9);
+  > input {
+    background-color: #1b1f23;
+    border: 1px solid rgb(255 255 255/0.6);
+    color: rgb(255 255 255/0.6);
+  }
+}
+.group-description-input-container {
+  padding-inline: 20px;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+  > textarea {
+    height: 100px;
+    margin-top: 2px;
+    resize: vertical;
+  }
+}
+.group-description-input-container.dark {
+  color: rgb(255 255 255/0.9);
+  > textarea {
+    background-color: #1b1f23;
+    border: 1px solid rgb(255 255 255/0.6);
+    color: rgb(255 255 255/0.6);
+  }
+}
+.create-group-buttons {
+  padding: 20px;
+  display: flex;
+  justify-content: end;
+  border-top: 1px solid rgb(0 0 0/0.3);
+  > button {
+    font-weight: 500;
+    border-radius: 24px;
+    padding: 4px 16px;
+    border: 1px solid rgb(0 0 0/0.3);
+    background-color: transparent;
+    color: #7c7c7c;
+    cursor: not-allowed;
+  }
+}
+.create-group-buttons.dark {
+  border-top: 1px solid rgb(255 255 255/0.3);
+  > button {
+    border: 1px solid rgb(255 255 255/0.3);
+    background-color: transparent;
+    color: rgb(255 255 255/0.6);
+    background-color: rgb(255 255 255/0.1);
+    cursor: not-allowed;
+  }
+}
+.active-create-group-buttons {
+  > button {
+    font-weight: 500;
+    border-radius: 24px;
+    padding: 4px 16px;
+    border: 1px solid #186fc6;
+    background-color: transparent;
+    color: #186fc6;
+    cursor: pointer;
+  }
+}
+.active-create-group-buttons.dark {
+  > button {
+    font-weight: 500;
+    border-radius: 24px;
+    padding: 4px 16px;
+    border: 1px solid #186fc6;
+    background-color: #186fc6;
+    color: #1b1f23;
+    cursor: pointer;
+  }
+}
+.discover-groups-container {
+  width: 100%;
+  > div {
+    > button {
+      display: none;
+    }
+    > div {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .groupPage-layout {
+    grid-template-areas: "main aside";
+    grid-template-columns: minmax(0, auto) minmax(0, 300px);
+  }
+}
+@media screen and (max-width: 500px) {
+  .create-and-your-groups {
+    padding: 0 20px;
+  }
+}
