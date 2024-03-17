@@ -1,0 +1,517 @@
+#app-boot-bg, #app-boot-bg-loader {
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+}
+#app-boot-bg-loader, .loading-bg {
+    z-index: 2;
+    background: none;
+}
+#app-boot-bg-loader .top-bar, .loading-bg .top-bar {
+    position: relative;
+    height: 52px;
+}
+#app-boot-bg-loader .content, .loading-bg .content {
+    display: block;
+    padding: 0;
+    width: 100%;
+}
+#app-boot-bg-loader .content, .loading-bg .content {
+    padding: 4.8rem 0;
+}
+#app-boot-bg-loader .initial-load-animation, .loading-bg .initial-load-animation {
+    padding-top: 9.6rem;
+    width: 200px;
+    margin: 0 auto;
+    transform: scale(1);
+    transition: transform .5s ease;
+}
+#app-boot-bg-loader .initial-load-animation .linkedin-image, .loading-bg .initial-load-animation .linkedin-image {
+    margin: 0 auto 3.2rem;
+    transform: translate(0);
+    opacity: 1;
+    transition: all .5s ease-out;
+}
+.justify-center {
+    justify-content: center!important;
+}
+.display-flex {
+    display: flex!important;
+}
+#app-boot-bg-loader .initial-load-animation .loader__linkedin-logo, .loading-bg .initial-load-animation .loader__linkedin-logo {
+    color: rgb(255 255 255/.9);
+}
+#app-boot-bg-loader .initial-load-animation .loading-bar, .loading-bg .initial-load-animation .loading-bar {
+    width: 130px;
+    height: 2px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: #bbb1a1;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transform: rotateY(0);
+    transition: transform .3s ease-in;
+}
+#app-boot-bg-loader .initial-load-animation .loading-bar .blue-bar, .loading-bg .initial-load-animation .loading-bar .blue-bar {
+    height: 100%;
+    width: 68px;
+    position: absolute;
+    transform: translate(-34px);
+    background-color: #71b7fb;
+    border-radius: 2px;
+    animation: initial-loading 1.5s ease infinite;
+}
+@keyframes initial-loading {
+    0% {
+        transform: translate(-34px);
+    }
+    
+    50% {
+        transform: translate(96px);
+    }
+    100% {
+        transform: translate(-34px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.loader.blue {
+    color: var(--color-brand)
+}
+
+#app-boot-bg,#app-boot-bg-loader {
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10
+}
+
+.render-mode-SSR #app-boot-bg,.render-mode-SSR #app-boot-bg-loader,.render-mode-SSRPIPE #app-boot-bg,.render-mode-SSRPIPE #app-boot-bg-loader {
+    display: none
+}
+
+#app-boot-bg-loader .content,.loading-bg .content {
+    display: block;
+    padding: 0;
+    width: 100%
+}
+
+#app-boot-bg-loader .initial-load-animation,.loading-bg .initial-load-animation {
+    padding-top: 9.6rem;
+    width: 200px;
+    margin: 0 auto;
+    transform: scale(1);
+    transition: transform .5s ease
+}
+
+#app-boot-bg-loader .initial-load-animation.fade-load .linkedin-image,.loading-bg .initial-load-animation.fade-load .linkedin-image {
+    transform: translateY(10px);
+    opacity: 0
+}
+
+#app-boot-bg-loader .initial-load-animation.fade-load .loading-bar,.loading-bg .initial-load-animation.fade-load .loading-bar {
+    transform: rotateY(90deg)
+}
+
+#app-boot-bg-loader .initial-load-animation .linkedin-image,.loading-bg .initial-load-animation .linkedin-image {
+    margin: 0 auto 3.2rem;
+    transform: translate(0);
+    opacity: 1;
+    transition: all .5s ease-out
+}
+
+#app-boot-bg-loader .initial-load-animation .loader__linkedin-logo,.loading-bg .initial-load-animation .loader__linkedin-logo {
+    color: var(--color-brand)
+}
+
+#app-boot-bg-loader .initial-load-animation .loading-bar,.loading-bg .initial-load-animation .loading-bar {
+    width: 130px;
+    height: 2px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: var(--color-brand-accent-5-on-dark);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transform: rotateY(0);
+    transition: transform .3s ease-in
+}
+
+#app-boot-bg-loader .initial-load-animation .loading-bar .blue-bar,.loading-bg .initial-load-animation .loading-bar .blue-bar {
+    height: 100%;
+    width: 68px;
+    position: absolute;
+    transform: translate(-34px);
+    background-color: var(--color-action);
+    border-radius: 2px;
+    animation: initial-loading 1.5s ease infinite
+}
+
+#app-boot-bg .l1-core-rail,#app-boot-bg .l1-left-rail,#app-boot-bg .l1-right-rail,#app-boot-bg .l2-core-rail,#app-boot-bg .l2-right-rail,.loading-bg .l1-core-rail,.loading-bg .l1-left-rail,.loading-bg .l1-right-rail,.loading-bg .l2-core-rail,.loading-bg .l2-right-rail {
+    float: left;
+    vertical-align: top
+}
+
+#app-boot-bg .module,.loading-bg .module {
+    background: var(--color-background-container)
+}
+
+#app-boot-bg .line,.loading-bg .line {
+    height: 10px;
+    background: var(--color-background-brand-accent-4);
+    animation: pulse .65s infinite alternate;
+    margin: 10px 0
+}
+
+#app-boot-bg .line-wrapper,.loading-bg .line-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px
+}
+
+#app-boot-bg .circle,.loading-bg .circle {
+    border-radius: 50%;
+    width: 56px;
+    height: 56px
+}
+
+#app-boot-bg .circle,#app-boot-bg .rect,.loading-bg .circle,.loading-bg .rect {
+    background: var(--color-background-brand-accent-4);
+    display: inline-block;
+    vertical-align: middle;
+    animation: pulse .65s infinite alternate
+}
+
+#app-boot-bg .rect,.loading-bg .rect {
+    border-radius: 4px;
+    width: 48px;
+    height: 48px
+}
+
+#app-boot-bg .line.white,#app-boot-bg .rect.white,.loading-bg .line.white,.loading-bg .rect.white {
+    background: var(--color-background-container);
+    animation: none
+}
+
+#app-boot-bg .width20,.loading-bg .width20 {
+    width: 20px
+}
+
+#app-boot-bg .width32,.loading-bg .width32 {
+    width: 32px
+}
+
+#app-boot-bg .width60,.loading-bg .width60 {
+    width: 60px
+}
+
+#app-boot-bg .width90,.loading-bg .width90 {
+    width: 90px
+}
+
+#app-boot-bg .width110,.loading-bg .width110 {
+    width: 110px
+}
+
+#app-boot-bg .width120,.loading-bg .width120 {
+    width: 120px
+}
+
+#app-boot-bg .width160,.loading-bg .width160 {
+    width: 160px
+}
+
+#app-boot-bg .width190,.loading-bg .width190 {
+    width: 190px
+}
+
+#app-boot-bg .width220,.loading-bg .width220 {
+    width: 220px
+}
+
+#app-boot-bg .width250,.loading-bg .width250 {
+    width: 250px
+}
+
+#app-boot-bg .width270,.loading-bg .width270 {
+    width: 270px
+}
+
+#app-boot-bg .width300,.loading-bg .width300 {
+    width: 300px
+}
+
+#app-boot-bg .width340,.loading-bg .width340 {
+    width: 340px
+}
+
+#app-boot-bg .width470,.loading-bg .width470 {
+    width: 470px
+}
+
+#app-boot-bg .width500,.loading-bg .width500 {
+    width: 500px
+}
+
+#app-boot-bg .height8,.loading-bg .height8 {
+    height: 8px
+}
+
+#app-boot-bg .height10,.loading-bg .height10 {
+    height: 10px
+}
+
+#app-boot-bg .height15,.loading-bg .height15 {
+    height: 15px
+}
+
+#app-boot-bg .height20,.loading-bg .height20 {
+    height: 20px
+}
+
+#app-boot-bg .height32,.loading-bg .height32 {
+    height: 32px
+}
+
+#app-boot-bg .height40,.loading-bg .height40 {
+    height: 40px
+}
+
+#app-boot-bg .height49,.loading-bg .height49 {
+    height: 49px
+}
+
+#app-boot-bg .height50,.loading-bg .height50 {
+    height: 50px
+}
+
+#app-boot-bg .height56,.loading-bg .height56 {
+    height: 56px
+}
+
+#app-boot-bg .height70,.loading-bg .height70 {
+    height: 70px
+}
+
+#app-boot-bg .height90,.loading-bg .height90 {
+    height: 90px
+}
+
+#app-boot-bg .height100,.loading-bg .height100 {
+    height: 100px
+}
+
+#app-boot-bg .height110,.loading-bg .height110 {
+    height: 110px
+}
+
+#app-boot-bg .height200,.loading-bg .height200 {
+    height: 200px
+}
+
+#app-boot-bg .height250,.loading-bg .height250 {
+    height: 250px
+}
+
+#app-boot-bg .height300,.loading-bg .height300 {
+    height: 300px
+}
+
+#app-boot-bg .height610,.loading-bg .height610 {
+    height: 610px
+}
+
+#app-boot-bg .padding-12-20,.loading-bg .padding-12-20 {
+    padding: 12px 20px
+}
+
+#app-boot-bg .padding-20,.loading-bg .padding-20 {
+    padding: 20px
+}
+
+#app-boot-bg .delay140,#app-boot-bg .delay200,#app-boot-bg .delay260,#app-boot-bg .delay320,#app-boot-bg .delay380,.loading-bg .delay140,.loading-bg .delay200,.loading-bg .delay260,.loading-bg .delay320,.loading-bg .delay380 {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fade-slide-in .334s cubic-bezier(0,0,.2,1) forwards
+}
+
+#app-boot-bg .delay140,.loading-bg .delay140 {
+    animation-delay: .14s
+}
+
+#app-boot-bg .delay200,.loading-bg .delay200 {
+    animation-delay: .2s
+}
+
+#app-boot-bg .delay260,.loading-bg .delay260 {
+    animation-delay: .26s
+}
+
+#app-boot-bg .delay320,.loading-bg .delay320 {
+    animation-delay: .32s
+}
+
+#app-boot-bg .delay380,.loading-bg .delay380 {
+    animation-delay: .38s
+}
+
+#app-boot-logo-spacer {
+    height: 15%
+}
+
+#app-boot-logo {
+    margin: auto;
+    width: 30%
+}
+
+#app-boot-logo svg {
+    width: auto;
+    height: auto
+}
+
+#app-boot-logo:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%
+}
+
+.boot-complete #app-boot-logo,.boot-complete .app-boot-bg-skeleton,.skeleton-load-complete {
+    display: none
+}
+
+@keyframes pulse {
+    0% {
+        opacity: .5
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fade-slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes initial-loading {
+    0% {
+        transform: translate(-34px)
+    }
+
+    50% {
+        transform: translate(96px)
+    }
+
+    to {
+        transform: translate(-34px)
+    }
+}
+
+
+
+
+#app-boot-bg-loader,.loading-bg {
+    z-index: 2;
+    background: none
+}
+
+#app-boot-bg-loader .top-bar,.loading-bg .top-bar {
+    position: relative;
+    height: 52px
+}
+
+#app-boot-bg-loader .content,.loading-bg .content {
+    padding: 4.8rem 0
+}
+
+#app-boot-bg.skeleton-load-complete .top-bar:after,.loading-bg.skeleton-load-complete .top-bar:after {
+    position: absolute;
+    bottom: -2px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-action);
+    box-shadow: 0 1px 2px #94a4ad;
+    transform: scaleX(.01);
+    animation: loading-bar 10s cubic-bezier(.1,.55,.15,.5) forwards
+}
+
+#app-boot-bg .content,.loading-bg .content {
+    margin: auto;
+    padding-top: 49px;
+    width: 1128px
+}
+
+#app-boot-bg .l1-left-rail,.loading-bg .l1-left-rail {
+    width: 216px;
+    margin-right: 24px
+}
+
+#app-boot-bg .l1-core-rail,.loading-bg .l1-core-rail {
+    width: 552px;
+    margin-right: 24px
+}
+
+#app-boot-bg .l1-right-rail,.loading-bg .l1-right-rail {
+    width: 312px
+}
+
+#app-boot-bg .l2-core-rail,.loading-bg .l2-core-rail {
+    width: 792px;
+    margin-right: 24px
+}
+
+#app-boot-bg .l2-right-rail,.loading-bg .l2-right-rail {
+    width: 307px
+}
+
+@keyframes loading-bar {
+    0% {
+        transform: scaleX(.01)
+    }
+
+    to {
+        transform: scaleX(1)
+    }
+} */

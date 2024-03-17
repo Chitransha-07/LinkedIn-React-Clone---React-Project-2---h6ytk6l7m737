@@ -1,0 +1,176 @@
+.login-signup-header {
+  display: block;
+}
+.login-signup-linkedin-icon-container {
+  display: block;
+  margin: 32px 0 0 56px;
+}
+.header-home-icon {
+  width: 110px;
+  height: 2.8rem;
+}
+.login-signup-form-container {
+  width: 352px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.login-signup-heading {
+  > h1 {
+    line-height: 1.25;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    padding: 0 0 4px 0;
+  }
+  > p {
+    font-size: 14px;
+    line-height: 1.42857;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+.login-signup-form-input {
+  margin-top: 24px;
+  position: relative;
+  background-color: transparent;
+  > input {
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.33333;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 1;
+    height: 52px;
+    padding: 28px 12px 6px;
+    border-radius: 4px !important;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    outline-color: #0a66c2;
+    background-color: transparent;
+  }
+  > label {
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+    left: 0;
+    display: block;
+    padding: 14px 0 0 12px;
+    transition: 0.2s all;
+    font-size: 18px;
+    line-height: 1.42857;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  > input:focus + label {
+    top: -10px;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 14px;
+  }
+  > input:not(:placeholder-shown) + label {
+    top: -10px;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 14px;
+  }
+  > span {
+    position: absolute;
+    right: 4px;
+    z-index: 2;
+    top: 14px;
+    padding: 0 8px;
+    font-size: 14px;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    color: #0a66c2;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+.login-signup-form-input-alert {
+  > label,
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    color: #cf0007;
+  }
+  > input {
+    border-color: #cf0007;
+    border-width: 2px;
+    outline-color: #cf0007;
+  }
+  > p {
+    font-weight: 500;
+  }
+}
+.login-forget-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #0a66c2;
+  font-weight: 500;
+  margin-top: 12px;
+  border-radius: 24px;
+  padding: 8px;
+  position: relative;
+  left: -8px;
+  display: inline-block;
+  &:hover {
+    background-color: #d7e4f2;
+    text-decoration: underline;
+  }
+}
+.login-signup-btn {
+  color: #fff;
+  background-color: #0a66c2;
+  border: none;
+  font-size: 16px;
+  border-radius: 24px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  width: 100%;
+}
+.login-form-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 16px 0 8px;
+  > p {
+    padding: 0 16px;
+  }
+  &::before,
+  &::after {
+    height: 1px;
+    width: auto;
+    background-color: rgb(0 0 0 / 0.35);
+    content: "";
+    flex-grow: 1;
+  }
+}
+.login-to-signin {
+  text-align: center;
+  margin-top: 20px;
+  > span {
+    color: #0a66c2;
+    font-weight: 500;
+    padding: 4px 8px;
+    &:hover {
+      cursor: pointer;
+      background-color: #dbecfc;
+      border-radius: 24px;
+      text-decoration: underline;
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .login-signup-linkedin-icon-container {
+    margin: 32px 32px 16px;
+  }
+  .login-signup-form-container {
+    padding: 0 32px;
+    width: 100%;
+    max-width: 416px;
+    box-shadow: none;
+  }
+}
