@@ -224,8 +224,8 @@ function SingleGroup({ loading, setLoading }) {
                         <img src={`https://ui-avatars.com/api/?name=${name.slice(0, 1)}&background=random`} alt="" />
                         <img src={"https://media.licdn.com/dms/image/D4D03AQEAGKpE3guIKA/profile-displayphoto-shrink_100_100/0/1682748449835?e=1708560000&v=beta&t=H1ZWtqL-UCoh3C8c0DmzTCpKuaAudZl1Pjg71WVnjQk"} alt="" />
                       </div>
-                      <p>{name}, connect with <span>Alok</span></p>
-                      <a href="https://www.linkedin.com/in/alok-shaw-b57a7426a/" target='_blank'>Connect</a>
+                      <p>{name}, connect with <span>Chitransha</span></p>
+                      <a href="https://www.linkedin.com/in/chitransha-dixit-81a35014b/" target='_blank'>Connect</a>
                     </div>
                   </div>
                 </div>

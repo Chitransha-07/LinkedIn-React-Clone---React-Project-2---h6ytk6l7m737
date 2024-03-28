@@ -805,12 +805,12 @@ function SingleComment({ index, comment, setComments }) {
   return (
     <div className={`feedPgae-main-post-comment ${darkMode ? 'dark' : ''}`}>
 
-      <img src={`https://ui-avatars.com/api/?name=${namesArr[random].slice(0, 1)}&background=random`} alt="" />
+      <img src={`https://ui-avatars.com/api/?name=${comment.author_details.profileImage}&background=random`} alt="" />
 
       <div>
 
         <div>
-          <p>{namesArr[random]}</p>
+          <p>{comment.author_details.name}</p>
 
           <div style={{ position: "relative" }}>
             <span>{comment.isEdited ? parseInt((new Date() - new Date(comment.updatedAt)) / (1000 * 60 * 60 * 24)) : parseInt((new Date() - new Date(comment.createdAt)) / (1000 * 60 * 60 * 24))}d</span>
