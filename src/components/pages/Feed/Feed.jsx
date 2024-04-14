@@ -505,7 +505,9 @@ export const SinglePost = ({ post, index, setPosts, getPosts }) => {
               {likeCount >= 3 && <img src="https://static.licdn.com/aero-v1/sc/h/cpho5fghnpme8epox8rdcds22" alt="" />}
               <span>{likeCount} {likeCount == 0 && 'like'}</span>
             </div>
-            <p>{post.commentCount} comments</p>
+            <div style={{ cursor: "pointer" }} onClick={handleComments}>
+              <p>{post.commentCount} comments</p>
+              </div>
           </div>
 
           <div className={`feedPage-main-post-like-comment-buttons ${darkMode ? 'dark' : ''}`}>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import getComments from "./getComments";
-export default async function postComment(
+export default 
+async function postComment(
   id,
   newComment,
   setComments,
