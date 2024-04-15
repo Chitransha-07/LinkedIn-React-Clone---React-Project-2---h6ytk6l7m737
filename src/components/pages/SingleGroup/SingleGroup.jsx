@@ -9,7 +9,7 @@ import SpinnerLoader from '../../SpinnerLoader/SpinnerLoader'
 import { useDarkMode } from '../../providers/DarkModeProvider'
 
 
-
+// Component for rendering a single group
 function SingleGroup({ loading, setLoading }) {
 
   const { darkMode } = useDarkMode()
@@ -30,7 +30,7 @@ function SingleGroup({ loading, setLoading }) {
     }
   );
 
-  
+  // Function to fetch group posts
   async function getGroupPosts(id) {
     try {
       const token = sessionStorage.getItem("userToken");
@@ -61,6 +61,8 @@ function SingleGroup({ loading, setLoading }) {
       setLoader(false)
     }
   }
+
+   // Function to add the current group to user's groups
   function addToMyGroups() {
     const myGroups = sessionStorage.getItem("linkedin-myGroups")
     if (myGroups) {
@@ -74,6 +76,8 @@ function SingleGroup({ loading, setLoading }) {
       return JSON.parse(sessionStorage.getItem("linkedin-myGroups"))
     })
   }
+
+  // Function to leave the current group
   function leaveGroup() {
     const myGroups = sessionStorage.getItem("linkedin-myGroups")
     let parsedMyGroups = JSON.parse(myGroups)
@@ -85,10 +89,11 @@ function SingleGroup({ loading, setLoading }) {
       return filteredyGroups
     })
   }
+
+  // Effect hook to fetch group data and posts when params.id changes
   useEffect(() => {
     setLoader(true)
     getAllChannels(setSuggestedGroups, setLoading)
-    // getGroup(params.id)
     getGroupPosts(params.id)
 
   }, [params.id])
@@ -242,6 +247,7 @@ function SingleGroup({ loading, setLoading }) {
 
 export default SingleGroup
 
+// Component for rendering a single post in a group
 const SinglePost = ({ post, group }) => {
   if(!post){
     return;
@@ -296,6 +302,7 @@ const SinglePost = ({ post, group }) => {
   )
 }
 
+// Component for creating a new post modal
 function CreatePostModal({ setShowPostModal, getPosts, group }) {
 
   const { darkMode } = useDarkMode()
@@ -321,6 +328,7 @@ function CreatePostModal({ setShowPostModal, getPosts, group }) {
     }
   };
 
+  // Function to handle file input for image upload
   function handleFileInput(e) {
 
     const file = e.target.files[0]
@@ -335,10 +343,14 @@ function CreatePostModal({ setShowPostModal, getPosts, group }) {
       setImageSrc(reader.result);
     }
   }
+
+  // Function to handle post creation
   function handleCreatePost(e) {
 
     createPostInChannel('Tech in Education: The Digital Classroom', contentEditableRef.current.textContent, imagePreviewRef, setShowPostModal, getPosts)
   }
+
+  // Function to send a POST request to create a new post in the group
   async function createPostInChannel(postTitle, postContent, imagePreviewRef, setShowPostModal, getPosts) {
 
 

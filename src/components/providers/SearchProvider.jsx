@@ -3,6 +3,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 
 const SearchContext = createContext();
 
+// SearchProvider component to manage search state
 function SearchProvider({ children }) {
   const [searchParms, setSearchParms] = useSearchParams();
   const location = useLocation();
@@ -16,6 +17,8 @@ function SearchProvider({ children }) {
   const [searchField, setSearchField] = React.useState(
     field ? field : "content"
   );
+
+  // Update search parameters when search field or term changes
   useEffect(() => {
     if (location.pathname === "/search") {
       setSearchParms(`${searchField}=${searchTerm}`);

@@ -5,6 +5,7 @@ import { useSearch } from "../../providers/SearchProvider";
 import { SinglePost } from "../Feed/Feed";
 import { useDarkMode } from "../../providers/DarkModeProvider";
 
+//  this component provides the functionality to search for posts based on different criteria and displays the search results in a structured layout. 
 function SearchPage({ loading, setLoading }) {
   const { darkMode } = useDarkMode();
   const [searchedData, setSearchedData] = useState([]);

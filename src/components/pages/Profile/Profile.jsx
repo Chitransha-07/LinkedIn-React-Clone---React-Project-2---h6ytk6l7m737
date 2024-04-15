@@ -5,6 +5,7 @@ import axios from "axios";
 import SpinnerLoader from "../../SpinnerLoader/SpinnerLoader";
 import { useDarkMode } from "../../providers/DarkModeProvider";
 
+// this function handles the rendering of a user profile page, fetching user data from the API, and managing loading states for displaying a spinner during data fetching.
 function Profile({ loading, setLoading }) {
   const { darkMode } = useDarkMode();
   const param = useParams();

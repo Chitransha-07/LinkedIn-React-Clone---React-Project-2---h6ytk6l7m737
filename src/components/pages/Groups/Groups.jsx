@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { createPortal } from "react-dom";
 import createGroup from "../../utils/createGroup";
 import { useDarkMode } from "../../providers/DarkModeProvider";
+
 function Groups({ loading, setLoading }) {
   const [active, setActive] = useState(true);
   const { darkMode } = useDarkMode();
@@ -21,12 +22,15 @@ function Groups({ loading, setLoading }) {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
+  // Function to navigate to a group page
   function handleNavigate(id) {
     navigate(`/group/${id}`);
   }
   useEffect(() => {
     getAllChannels(setSuggestedGroups, setLoading);
   }, []);
+
+  // Render the component when not loading
   return (
     !loading && (
       <>

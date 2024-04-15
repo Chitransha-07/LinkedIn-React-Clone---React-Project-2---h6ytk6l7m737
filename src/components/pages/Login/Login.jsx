@@ -19,6 +19,7 @@ function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
+  // Function to login user
   const loginUser = async () => {
     const config = {
       method: "POST",
@@ -62,6 +63,8 @@ function Login() {
       }, 5000);
     }
   };
+
+  // Function for guest login
   const guestLogin = async () => {
     const config = {
       method: "POST",
@@ -107,6 +110,7 @@ function Login() {
     }
   };
 
+// Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     const emailRegex = new RegExp(
@@ -137,11 +141,15 @@ function Login() {
     }
     setIncorrectDetails(false);
   };
+
+  // Function to handle input changes
   const handleInputs = (e) => {
     setUserDetails((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
+
+  // Effect to pre-fill email if provided in URL search parameters
   useEffect(() => {
     if (decodeURIComponent(searchParams.get("email")) !== "null") {
       setUserDetails((prev) => {

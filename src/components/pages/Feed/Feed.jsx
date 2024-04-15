@@ -280,10 +280,12 @@ function CreatePostModal({ setShowPostModal, getPosts, setPosts }) {
   const contentEditableRef = useRef(null);
   const imagePreviewRef = useRef(null);
 
+  // Function to handle content change in content editable div
   const handleContentChange = (e) => {
     const content = contentEditableRef.current.innerHTML;
     setContent(content)
 
+    // Regular expression to match img tags and extract src attribute
     const imgRegex = /<img.*?src=["'](.*?)["'].*?>/g;
     const matches = content.match(imgRegex);
 

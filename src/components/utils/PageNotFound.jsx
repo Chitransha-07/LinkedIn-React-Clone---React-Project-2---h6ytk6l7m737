@@ -5,6 +5,8 @@ import { useDarkMode } from "../providers/DarkModeProvider";
 
 function PageNotFound({ loading, setLoading }) {
   const { darkMode } = useDarkMode();
+
+  // useEffect to set loading state to false after a delay
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);

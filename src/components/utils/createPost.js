@@ -40,35 +40,4 @@ export default async function createPost(
   } finally {
     setShowPostModal(false);
   }
-
-  // const token = sessionStorage.getItem("userToken");
-
-  // const data = new FormData();
-  // data.append("title", postTitle)
-  // data.append("content", postContent)
-  // console.log(data.get('title'));
-
-  // // const myHeaders = new Headers();
-  // // myHeaders.append("projectID", "f104bi07c490");
-  // // myHeaders.append("Content-Type", "multipart/form-data");
-  // // myHeaders.append("Authorization", `Bearer ${token}`);
-
-  // const config = {
-  //     method: 'POST',
-  //     headers: {
-  //       "Content-Type" : "multipart/form-data",
-  //       "projectID": 'f104bi07c490',
-  //       "Authorization": `Bearer ${token}`
-  //     },
-  //     body : data
-  // }
-  // try {
-  //     const response = await fetch(`https://academics.newtonschool.co/api/v1/linkedin/post`, config)
-  //     console.log(response);
-  //     const result = await response.json();
-  //     console.log(result);
-
-  // } catch (error) {
-  //     console.log(error);
-  // }
 }

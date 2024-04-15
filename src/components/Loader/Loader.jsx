@@ -4,7 +4,7 @@ function Loader() {
 
     document.body.style.backgroundColor = "#000"
     useEffect(() => {
-        // return () => document.body.style.backgroundColor = "#f4f2ee"
+        
     }, [])
     return (
         <div id="app-boot-bg-loader" className="app-boot-bg-skeleton">
