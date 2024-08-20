@@ -132,7 +132,7 @@ function SingleGroup({ loading, setLoading }) {
                   </div>
 
                   {/* Groups */}
-                  <div className={`feedPage-layout--sidebar-groupAndChannel ${darkMode ? 'dark' : ''}`}>
+                  <div className={`feedPage-layout--sidebar-groupAndChannel ${darkMode ? 'dark' : ''} pointer`}>
                     <div>
                       <Link to="/groups">Groups</Link>
                       <Link to="#">Events</Link>

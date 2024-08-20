@@ -173,8 +173,8 @@ function Navbar() {
               <NavLink
                 className={({ isActive }) => {
                   let name = isActive
-                    ? "navbar-links-active navbar-links"
-                    : "navbar-links";
+                    ? "navbar-links-active navbar-links pointer"
+                    : "navbar-links pointer";
                   name = darkMode ? `${name} dark` : name;
                   return name;
                 }}
@@ -201,8 +201,8 @@ function Navbar() {
               <NavLink
                 className={({ isActive }) => {
                   let name = isActive
-                    ? "navbar-links-active navbar-links hide-560"
-                    : "navbar-links hide-560";
+                    ? "navbar-links-active navbar-links hide-560 pointer"
+                    : "navbar-links hide-560 pointer";
                   name = darkMode ? `${name} dark` : name;
                   return name;
                 }}
@@ -229,8 +229,8 @@ function Navbar() {
               <NavLink
                 className={({ isActive }) => {
                   let name = isActive
-                    ? "navbar-links-active navbar-links hide-560"
-                    : "navbar-links hide-560";
+                    ? "navbar-links-active navbar-links hide-560 pointer"
+                    : "navbar-links hide-560 pointer";
                   name = darkMode ? `${name} dark` : name;
                   return name;
                 }}
@@ -257,8 +257,8 @@ function Navbar() {
               <NavLink
                 className={({ isActive }) => {
                   let name = isActive
-                    ? "navbar-links-active navbar-links hide-560"
-                    : "navbar-links hide-560";
+                    ? "navbar-links-active navbar-links hide-560 pointer"
+                    : "navbar-links hide-560 pointer";
                   name = darkMode ? `${name} dark` : name;
                   return name;
                 }}
@@ -293,7 +293,7 @@ function Navbar() {
                   navigate("/business");
                 }}
                 style={{ padding: "0 12px" }}
-                className={`navbar-links ${darkMode ? "dark" : ""}`}
+                className={`navbar-links ${darkMode ? "dark pointer" : "pointer"}`}
               >
                 <div>
                   <svg
