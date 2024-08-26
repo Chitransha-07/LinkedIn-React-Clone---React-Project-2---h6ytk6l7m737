@@ -8,14 +8,14 @@ function Premium({ loading, setLoading }) {
     setLoading(false);
   });
   return (
-    <div className="all-content-container">
+    <div className="all-content-container pointer">
       <div className={`premium-details-container ${darkMode ? "dark" : ""}`}>
         <p>
           <b>Get hired 2x faster on average </b>
           by discovering over 20 million open jobs and exploring valuable
           resources to help whit your search.
         </p>
-        <button>Try now</button>
+       
         <div className="premium-card-container">
           <div className={`premium-card ${darkMode ? "dark" : ""}`}>
             <h4>InMail credits</h4>

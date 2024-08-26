@@ -293,7 +293,11 @@ function Navbar() {
                   navigate("/business");
                 }}
                 style={{ padding: "0 12px" }}
+<<<<<<< HEAD
                 className={`navbar-links pointer ${darkMode ? "dark" : ""}`}
+=======
+                className={`navbar-links ${darkMode ? "dark pointer" : "pointer"}`}
+>>>>>>> origin/master
               >
                 <div>
                   <svg
