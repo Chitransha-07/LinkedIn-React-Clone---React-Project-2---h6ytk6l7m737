@@ -170,7 +170,7 @@ function Groups({ loading, setLoading }) {
                     <p>Ad</p>
                     <div>
                       <img
-                        src={`https://ui-avatars.com/api/?name=${name.slice(
+                        src={`https://ui-avatars.com/api/?name=${name?.slice(
                           0,
                           1
                         )}&background=random`}

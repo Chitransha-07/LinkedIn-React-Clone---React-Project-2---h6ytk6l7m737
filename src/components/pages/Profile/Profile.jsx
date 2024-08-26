@@ -5,7 +5,7 @@ import axios from "axios";
 import SpinnerLoader from "../../SpinnerLoader/SpinnerLoader";
 import { useDarkMode } from "../../providers/DarkModeProvider";
 
-// this function handles the rendering of a user profile page, fetching user data from the API, and managing loading states for displaying a spinner during data fetching.
+// This function handles the rendering of a user profile page, fetching user data from the API, and managing loading states for displaying a spinner during data fetching.
 function Profile({ loading, setLoading }) {
   const { darkMode } = useDarkMode();
   const param = useParams();
@@ -57,6 +57,7 @@ function Profile({ loading, setLoading }) {
     }
     getUser();
   }, []);
+
   return (
     !loading && (
       <>
@@ -76,7 +77,7 @@ function Profile({ loading, setLoading }) {
                         src="https://img.freepik.com/free-photo/old-cement-wall-texture_1149-1280.jpg"
                         alt=""
                       />
-                      {user.profileImage ? (
+                      {user && user.profileImage ? (
                         <img
                           className={`profile-image ${darkMode ? "dark" : ""}`}
                           src={user.profileImage}
@@ -85,64 +86,66 @@ function Profile({ loading, setLoading }) {
                       ) : (
                         <img
                           className={`profile-image ${darkMode ? "dark" : ""}`}
-                          src={`https://ui-avatars.com/api/?name=${user.name.slice(
-                            0,
-                            1
-                          )}&background=random`}
+                          src={`https://ui-avatars.com/api/?name=${user ? user.name?.slice(0, 1) : ""}&background=random`}
+                          alt=""
                         />
                       )}
                     </div>
-                    <p className={`profile-name ${darkMode ? "dark" : ""}`}>
-                      {user.name}
-                    </p>
-                    <p
-                      className={`profile-dummy-description ${
-                        darkMode ? "dark" : ""
-                      }`}
-                    >
-                      As a frontend developer, your role is pivotal in shaping
-                      the user's digital experience. With an intricate blend of
-                      creativity and technical prowess, you meticulously craft
-                      the visual elements and interactions that breathe life
-                      into web applications.
-                    </p>
-                    {id !== user._id && (
-                      <p className={`profile-msg ${darkMode ? "dark" : ""}`}>
-                        Connecting and Messaging feature is not available
-                      </p>
+                    {user && (
+                      <>
+                        <p className={`profile-name ${darkMode ? "dark" : ""}`}>
+                          {user.name}
+                        </p>
+                        <p
+                          className={`profile-dummy-description ${
+                            darkMode ? "dark" : ""
+                          }`}
+                        >
+                          As a frontend developer, your role is pivotal in
+                          shaping the user's digital experience. With an intricate blend of
+                          creativity and technical prowess, you meticulously craft
+                          the visual elements and interactions that breathe life
+                          into web applications.
+                        </p>
+                        {id !== user._id && (
+                          <p className={`profile-msg ${darkMode ? "dark" : ""}`}>
+                            Connecting and Messaging feature is not available
+                          </p>
+                        )}
+                        <div
+                          className={`profile-dummy-button ${
+                            darkMode ? "dark" : ""
+                          }`}
+                        >
+                          {id !== user._id ? (
+                            <>
+                              <button onClick={handleConnect}>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 16 16"
+                                  id="connect-small"
+                                  aria-hidden="true"
+                                  role="none"
+                                  data-supported-dps="16x16"
+                                  fill="currentColor"
+                                >
+                                  <path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
+                                </svg>
+                                Connect
+                              </button>
+                              <button>Message</button>
+                              <button>More</button>
+                            </>
+                          ) : (
+                            <>
+                              <button>Open to</button>
+                              <button>Add profile section</button>
+                              <button>More</button>
+                            </>
+                          )}
+                        </div>
+                      </>
                     )}
-                    <div
-                      className={`profile-dummy-button ${
-                        darkMode ? "dark" : ""
-                      }`}
-                    >
-                      {id !== user._id ? (
-                        <>
-                          <button onClick={handleConnect}>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 16 16"
-                              id="connect-small"
-                              aria-hidden="true"
-                              role="none"
-                              data-supported-dps="16x16"
-                              fill="currentColor"
-                            >
-                              <path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-                            </svg>
-                            Connect
-                          </button>
-                          <button>Message</button>
-                          <button>More</button>
-                        </>
-                      ) : (
-                        <>
-                          <button>Open to</button>
-                          <button>Add profile section</button>
-                          <button>More</button>
-                        </>
-                      )}
-                    </div>
                   </div>
 
                   <div
@@ -161,7 +164,6 @@ function Profile({ loading, setLoading }) {
                         users engage, explore, and connect.
                       </p>
                       <p>
-                        {" "}
                         Your keen eye for design and mastery of HTML, CSS, and
                         JavaScript bring life to static designs, making them
                         dynamic and responsive. You understand the importance of
@@ -188,7 +190,7 @@ function Profile({ loading, setLoading }) {
                       <p>Ad</p>
                       <div>
                         <img
-                          src={`https://ui-avatars.com/api/?name=${name.slice(
+                          src={`https://ui-avatars.com/api/?name=${name?.slice(
                             0,
                             1
                           )}&background=random`}

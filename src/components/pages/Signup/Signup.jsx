@@ -38,6 +38,7 @@ function Signup() {
         config
       );
       const result = await response.json();
+      console.log("Signupdata",result)
       const token = result.token;
       if (token) {
         sessionStorage.setItem("userToken", token);

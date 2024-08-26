@@ -173,8 +173,8 @@ function Navbar() {
               <NavLink
                 className={({ isActive }) => {
                   let name = isActive
-                    ? "navbar-links-active navbar-links"
-                    : "navbar-links";
+                    ? "navbar-links-active navbar-links pointer"
+                    : "navbar-links pointer";
                   name = darkMode ? `${name} dark` : name;
                   return name;
                 }}
@@ -201,8 +201,8 @@ function Navbar() {
               <NavLink
                 className={({ isActive }) => {
                   let name = isActive
-                    ? "navbar-links-active navbar-links hide-560"
-                    : "navbar-links hide-560";
+                    ? "navbar-links-active navbar-links hide-560 pointer"
+                    : "navbar-links hide-560 pointer";
                   name = darkMode ? `${name} dark` : name;
                   return name;
                 }}
@@ -229,8 +229,8 @@ function Navbar() {
               <NavLink
                 className={({ isActive }) => {
                   let name = isActive
-                    ? "navbar-links-active navbar-links hide-560"
-                    : "navbar-links hide-560";
+                    ? "navbar-links-active navbar-links hide-560 pointer"
+                    : "navbar-links hide-560 pointer";
                   name = darkMode ? `${name} dark` : name;
                   return name;
                 }}
@@ -257,8 +257,8 @@ function Navbar() {
               <NavLink
                 className={({ isActive }) => {
                   let name = isActive
-                    ? "navbar-links-active navbar-links hide-560"
-                    : "navbar-links hide-560";
+                    ? "navbar-links-active navbar-links hide-560 pointer"
+                    : "navbar-links hide-560 pointer";
                   name = darkMode ? `${name} dark` : name;
                   return name;
                 }}
@@ -293,7 +293,7 @@ function Navbar() {
                   navigate("/business");
                 }}
                 style={{ padding: "0 12px" }}
-                className={`navbar-links ${darkMode ? "dark" : ""}`}
+                className={`navbar-links pointer ${darkMode ? "dark" : ""}`}
               >
                 <div>
                   <svg
@@ -353,12 +353,10 @@ function NavbarProfile() {
         setShowModal((n) => !n);
       }}
     >
+      
       <img
         style={{ width: "24px", borderRadius: "50%" }}
-        src={`https://ui-avatars.com/api/?name=${name.slice(
-          0,
-          1
-        )}&background=random`}
+        src={`https://ui-avatars.com/api/?name=${name?.slice(0,1)}&background=random`}
         alt="Profile Picture"
       />
       <span>
@@ -421,7 +419,7 @@ function NavbarProfileModal({ myElementRef, setShowModal }) {
       >
         <div>
           <img
-            src={`https://ui-avatars.com/api/?name=${name.slice(
+            src={`https://ui-avatars.com/api/?name=${name?.slice(
               0,
               1
             )}&background=random`}

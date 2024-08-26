@@ -44,9 +44,9 @@ function Home() {
         sessionStorage.setItem(
           "userDetails",
           JSON.stringify({
-            name: result.data.name,
-            email: result.data.email,
-            id: result.data._id,
+            name: result.data.user.name,
+            email: result.data.user.email,
+            id: result.data.user._id,
           })
         );
         setIsLoggedIn(true);
@@ -93,9 +93,9 @@ function Home() {
         sessionStorage.setItem(
           "userDetails",
           JSON.stringify({
-            name: result.data.name,
-            email: result.data.email,
-            id: result.data._id,
+            name: result.data.user.name,
+            email: result.data.user.email,
+            id: result.data.user._id,
           })
         );
         setIsLoggedIn(true);

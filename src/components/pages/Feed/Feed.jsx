@@ -95,7 +95,7 @@ function Feed({ loading, setLoading }) {
                     <div className='feedPage-layout--sidebar-profile-cover'></div>
                     <Link to={`/profile/${id}`} className='feedPage-layout--sidebar-profile-image-container'>
                       <div>
-                        <img className='feedPage-layout--sidebar-profile-image' src={`https://ui-avatars.com/api/?name=${name.slice(0, 1)}&background=random`} alt="" />
+                        <img className='feedPage-layout--sidebar-profile-image' src={`https://ui-avatars.com/api/?name=${name?.slice(0, 1)}&background=random`} alt="" />
                       </div>
                       <div className={`feedPage-layout--sidebar-profile-name ${darkMode ? 'dark' : ''}`}>{name}</div>
                     </Link>
@@ -127,8 +127,8 @@ function Feed({ loading, setLoading }) {
                 <div className={`feedPage-layout--sidebar-groupAndChannel ${darkMode ? 'dark' : ''}`}>
                   <div>
                     <Link to="/groups">Groups</Link>
-                    <Link style={{ cursor: "not-allowed" }} to="#">Events</Link>
-                    <Link style={{ cursor: "not-allowed" }} to="#">Followed Hashtags</Link>
+                    <Link style={{ cursor: "pointer" }} to="Coming soon">Events</Link>
+                    <Link style={{ cursor: "pointer" }} to="Coming soon">Followed Hashtags</Link>
                   </div>
                   <p>Discover more</p>
                 </div>
@@ -144,7 +144,7 @@ function Feed({ loading, setLoading }) {
                   <div className={`feedPage-layout--main-createPost-container`}>
 
                     <div className={`feedPage-layout--main-createPost-input-container ${darkMode ? 'dark' : ''}`}>
-                      <Link to={`/profile/${id}`}><img src={`https://ui-avatars.com/api/?name=${name.slice(0, 1)}&background=random`} alt="" /></Link>
+                      <Link to={`/profile/${id}`}><img src={`https://ui-avatars.com/api/?name=${name?.slice(0, 1)}&background=random`} alt="" /></Link>
                       <button onClick={() => {
                         setShowPostModal(true)
                       }}>
@@ -162,13 +162,13 @@ function Feed({ loading, setLoading }) {
                         </svg>
                         <span>Media</span>
                       </div>
-                      <div style={{ cursor: "not-allowed" }}>
+                      <div style={{ cursor: "pointer" }}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="calendar-medium" aria-hidden="true" role="none" data-supported-dps="24x24" fill="currentColor">
                           <path d="M3 3v15c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V3H3zm13 1.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zm-8 0a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM19 18c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1V9h14v9zM7 11h2v2H7v-2zm0 4h2v2H7v-2zm4-4h2v2h-2v-2zm0 4h2v2h-2v-2zm4-4h2v2h-2v-2zm0 4h2v2h-2v-2z"></path>
                         </svg>
                         <span>Event</span>
                       </div>
-                      <div style={{ cursor: "not-allowed" }}>
+                      <div style={{ cursor: "pointer" }}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="content-align-left-medium" aria-hidden="true" role="none" data-supported-dps="24x24" fill="currentColor">
                           <path d="M21 3v2H3V3zm-6 6h6V7h-6zm0 4h6v-2h-6zm0 4h6v-2h-6zM3 21h18v-2H3zM13 7H3v10h10z"></path>
                         </svg>
@@ -252,7 +252,7 @@ function Feed({ loading, setLoading }) {
                   <div className={`feedPage-layout--aside-social-connect ${darkMode ? 'dark' : ''}`}>
                     <p>Ad</p>
                     <div>
-                      <img src={`https://ui-avatars.com/api/?name=${name.slice(0, 1)}&background=random`} alt="" />
+                      <img src={`https://ui-avatars.com/api/?name=${name?.slice(0, 1)}&background=random`} alt="" />
                       <img src={"https://media.licdn.com/dms/image/D4D03AQEAGKpE3guIKA/profile-displayphoto-shrink_100_100/0/1682748449835?e=1708560000&v=beta&t=H1ZWtqL-UCoh3C8c0DmzTCpKuaAudZl1Pjg71WVnjQk"} alt="" />
                     </div>
                     <p>{name}, connect with <span>Chitransha</span></p>
@@ -337,7 +337,7 @@ function CreatePostModal({ setShowPostModal, getPosts, setPosts }) {
               <div className='create-post-modal-share-box'>
 
                 <div className={`create-post-modal-share-box-header ${darkMode ? 'dark' : ''}`}>
-                  <img src={`https://ui-avatars.com/api/?name=${name.slice(0, 1)}&background=random`} alt="" />
+                  <img src={`https://ui-avatars.com/api/?name=${name?.slice(0, 1)}&background=random`} alt="" />
                   <div>
                     <span>{name}</span>
                     <span>Post to Anyone</span>
@@ -471,7 +471,7 @@ export const SinglePost = ({ post, index, setPosts, getPosts }) => {
           {post.author.profileImage ?
             <img onClick={navigateToProfile} src={post.author.profileImage} alt='profile picture' />
             :
-            <img onClick={navigateToProfile} src={`https://ui-avatars.com/api/?name=${post.author.name.slice(0, 1)}&background=random`} alt="" />
+            <img onClick={navigateToProfile} src={`https://ui-avatars.com/api/?name=${post.author.name?.slice(0, 1)}&background=random`} alt="" />
           }
           <div>
             <p onClick={navigateToProfile} style={{ textTransform: "capitalize" }}>{post.author.name}</p>
@@ -691,7 +691,7 @@ function EditPostModal({ setShowEditPostModal, setShowEditModal, post, setPosts,
               <div className='create-post-modal-share-box'>
 
                 <div className={`create-post-modal-share-box-header ${darkMode ? 'dark' : ''}`}>
-                  <img src={`https://ui-avatars.com/api/?name=${name.slice(0, 1)}&background=random`} alt="" />
+                  <img src={`https://ui-avatars.com/api/?name=${name?.slice(0, 1)}&background=random`} alt="" />
                   <div>
                     <span>{name}</span>
                     <span>Post to Anyone</span>
@@ -784,7 +784,7 @@ function Comments({ id }) {
   return (
     <div className={`feedPgae-main-post-comments-container ${darkMode ? 'dark' : ''}`}>
       <div className={`feedPgae-main-post-comment-input ${darkMode ? 'dark' : ''}`}>
-        <img src={`https://ui-avatars.com/api/?name=${name.slice(0, 1)}&background=random`} alt="" />
+        <img src={`https://ui-avatars.com/api/?name=${name?.slice(0, 1)}&background=random`} alt="" />
         <input onChange={handleInput} value={newComment} type="text" placeholder='Add a comment...' />
         {newComment && <span onClick={handlePostComment}>Post</span>}
       </div>
